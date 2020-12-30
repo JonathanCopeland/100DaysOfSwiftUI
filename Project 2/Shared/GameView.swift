@@ -37,9 +37,6 @@ struct GameView: View {
                         .fontWeight(.black)
                     Text("Score \(score)")
                     Text("\(timeRemaining)")
-                                       
-
-
                 }
                 
                 ForEach(0 ..< 3) { number in
@@ -48,8 +45,7 @@ struct GameView: View {
                         
                     }) {
                         Image(self.countries[number])
-                            .renderingMode(.original).clipShape(Capsule()).overlay(Capsule().stroke(Color.black, lineWidth: 1)).shadow(color: .black, radius: 2)
-
+                            .FlagDesignStyle()
                     }
                 }
                 

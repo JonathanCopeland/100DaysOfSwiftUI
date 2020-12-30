@@ -13,6 +13,8 @@ struct ContentView: View {
     @State private var numberOfPeople = 0
     @State private var tipPercentage = 0
     let tipPercentages = [10, 15, 20, 25, 0]
+    @State private var useRedText = false
+
     
     var totalAmount: Double {
         let tipSelection = Double(tipPercentages[tipPercentage])
@@ -30,7 +32,6 @@ struct ContentView: View {
         let peopleCount = Double(numberOfPeople+2)
         let tipSelection = Double(tipPercentages[tipPercentage])
         let totalAmount = Double(billAmount) ?? 0
-        
         let tipValue = totalAmount / 100 * tipSelection
         let grandTotal = totalAmount + tipValue
         let amountPerPerson = grandTotal / peopleCount
@@ -57,13 +58,18 @@ struct ContentView: View {
                     Picker("Tip percentage", selection: $tipPercentage) { 
                         ForEach(0 ..< tipPercentages.count) {
                             Text("\(self.tipPercentages[$0])%")
-                            
                         }
                     }.pickerStyle(SegmentedPickerStyle())
                 }
                 
                 Section (header: Text("Total amount")) {
+                    
+
                     Text("R\(totalAmount, specifier: "%.2f")")
+                        .foregroundColor(NoTipWarning() ? .red : .primary)
+            
+                
+                    
                 }
                 
                 Section (header: Text("Amount per person")) {
@@ -76,6 +82,13 @@ struct ContentView: View {
 
         }
 
+    }
+    
+    func NoTipWarning() -> Bool {
+        if(tipPercentage == 4) {
+            return true
+        }
+        return false
     }
 }
 

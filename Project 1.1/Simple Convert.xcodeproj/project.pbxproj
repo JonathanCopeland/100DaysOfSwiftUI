@@ -1,0 +1,713 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BDDF603C2573C99500EED208 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDF603B2573C99500EED208 /* Tests_iOS.swift */; };
+		BDDF60472573C99500EED208 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDF60462573C99500EED208 /* Tests_macOS.swift */; };
+		BDDF60492573C99500EED208 /* Simple_ConvertApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDF60202573C99200EED208 /* Simple_ConvertApp.swift */; };
+		BDDF604A2573C99500EED208 /* Simple_ConvertApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDF60202573C99200EED208 /* Simple_ConvertApp.swift */; };
+		BDDF604B2573C99500EED208 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDF60212573C99200EED208 /* ContentView.swift */; };
+		BDDF604C2573C99500EED208 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDF60212573C99200EED208 /* ContentView.swift */; };
+		BDDF604D2573C99500EED208 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDDF60222573C99500EED208 /* Assets.xcassets */; };
+		BDDF604E2573C99500EED208 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDDF60222573C99500EED208 /* Assets.xcassets */; };
+		BDDF60962573E3D100EED208 /* Rates.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDF60952573E3D100EED208 /* Rates.swift */; };
+		BDDF60972573E3D100EED208 /* Rates.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDF60952573E3D100EED208 /* Rates.swift */; };
+		BDDF60A42573E5E000EED208 /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDF60A32573E5E000EED208 /* Rate.swift */; };
+		BDDF60A52573E5E000EED208 /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDF60A32573E5E000EED208 /* Rate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BDDF60382573C99500EED208 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BDDF601B2573C99200EED208 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BDDF60262573C99500EED208;
+			remoteInfo = "Simple Convert (iOS)";
+		};
+		BDDF60432573C99500EED208 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BDDF601B2573C99200EED208 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BDDF602E2573C99500EED208;
+			remoteInfo = "Simple Convert (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BDDF60202573C99200EED208 /* Simple_ConvertApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simple_ConvertApp.swift; sourceTree = "<group>"; };
+		BDDF60212573C99200EED208 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BDDF60222573C99500EED208 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BDDF60272573C99500EED208 /* Simple Convert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Convert.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDDF602A2573C99500EED208 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDDF602F2573C99500EED208 /* Simple Convert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Convert.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDDF60312573C99500EED208 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDDF60322573C99500EED208 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		BDDF60372573C99500EED208 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDDF603B2573C99500EED208 /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
+		BDDF603D2573C99500EED208 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDDF60422573C99500EED208 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDDF60462573C99500EED208 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
+		BDDF60482573C99500EED208 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDDF60952573E3D100EED208 /* Rates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rates.swift; sourceTree = "<group>"; };
+		BDDF60A32573E5E000EED208 /* Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BDDF60242573C99500EED208 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDDF602C2573C99500EED208 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDDF60342573C99500EED208 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDDF603F2573C99500EED208 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BDDF601A2573C99200EED208 = {
+			isa = PBXGroup;
+			children = (
+				BDDF601F2573C99200EED208 /* Shared */,
+				BDDF60292573C99500EED208 /* iOS */,
+				BDDF60302573C99500EED208 /* macOS */,
+				BDDF603A2573C99500EED208 /* Tests iOS */,
+				BDDF60452573C99500EED208 /* Tests macOS */,
+				BDDF60282573C99500EED208 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BDDF601F2573C99200EED208 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				BDDF60202573C99200EED208 /* Simple_ConvertApp.swift */,
+				BDDF60212573C99200EED208 /* ContentView.swift */,
+				BDDF60222573C99500EED208 /* Assets.xcassets */,
+				BDDF60952573E3D100EED208 /* Rates.swift */,
+				BDDF60A32573E5E000EED208 /* Rate.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		BDDF60282573C99500EED208 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BDDF60272573C99500EED208 /* Simple Convert.app */,
+				BDDF602F2573C99500EED208 /* Simple Convert.app */,
+				BDDF60372573C99500EED208 /* Tests iOS.xctest */,
+				BDDF60422573C99500EED208 /* Tests macOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BDDF60292573C99500EED208 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				BDDF602A2573C99500EED208 /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		BDDF60302573C99500EED208 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				BDDF60312573C99500EED208 /* Info.plist */,
+				BDDF60322573C99500EED208 /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		BDDF603A2573C99500EED208 /* Tests iOS */ = {
+			isa = PBXGroup;
+			children = (
+				BDDF603B2573C99500EED208 /* Tests_iOS.swift */,
+				BDDF603D2573C99500EED208 /* Info.plist */,
+			);
+			path = "Tests iOS";
+			sourceTree = "<group>";
+		};
+		BDDF60452573C99500EED208 /* Tests macOS */ = {
+			isa = PBXGroup;
+			children = (
+				BDDF60462573C99500EED208 /* Tests_macOS.swift */,
+				BDDF60482573C99500EED208 /* Info.plist */,
+			);
+			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BDDF60262573C99500EED208 /* Simple Convert (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BDDF60512573C99500EED208 /* Build configuration list for PBXNativeTarget "Simple Convert (iOS)" */;
+			buildPhases = (
+				BDDF60232573C99500EED208 /* Sources */,
+				BDDF60242573C99500EED208 /* Frameworks */,
+				BDDF60252573C99500EED208 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Simple Convert (iOS)";
+			productName = "Simple Convert (iOS)";
+			productReference = BDDF60272573C99500EED208 /* Simple Convert.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BDDF602E2573C99500EED208 /* Simple Convert (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BDDF60542573C99500EED208 /* Build configuration list for PBXNativeTarget "Simple Convert (macOS)" */;
+			buildPhases = (
+				BDDF602B2573C99500EED208 /* Sources */,
+				BDDF602C2573C99500EED208 /* Frameworks */,
+				BDDF602D2573C99500EED208 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Simple Convert (macOS)";
+			productName = "Simple Convert (macOS)";
+			productReference = BDDF602F2573C99500EED208 /* Simple Convert.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BDDF60362573C99500EED208 /* Tests iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BDDF60572573C99500EED208 /* Build configuration list for PBXNativeTarget "Tests iOS" */;
+			buildPhases = (
+				BDDF60332573C99500EED208 /* Sources */,
+				BDDF60342573C99500EED208 /* Frameworks */,
+				BDDF60352573C99500EED208 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BDDF60392573C99500EED208 /* PBXTargetDependency */,
+			);
+			name = "Tests iOS";
+			productName = "Tests iOS";
+			productReference = BDDF60372573C99500EED208 /* Tests iOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		BDDF60412573C99500EED208 /* Tests macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BDDF605A2573C99500EED208 /* Build configuration list for PBXNativeTarget "Tests macOS" */;
+			buildPhases = (
+				BDDF603E2573C99500EED208 /* Sources */,
+				BDDF603F2573C99500EED208 /* Frameworks */,
+				BDDF60402573C99500EED208 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BDDF60442573C99500EED208 /* PBXTargetDependency */,
+			);
+			name = "Tests macOS";
+			productName = "Tests macOS";
+			productReference = BDDF60422573C99500EED208 /* Tests macOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BDDF601B2573C99200EED208 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					BDDF60262573C99500EED208 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					BDDF602E2573C99500EED208 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					BDDF60362573C99500EED208 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = BDDF60262573C99500EED208;
+					};
+					BDDF60412573C99500EED208 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = BDDF602E2573C99500EED208;
+					};
+				};
+			};
+			buildConfigurationList = BDDF601E2573C99200EED208 /* Build configuration list for PBXProject "Simple Convert" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BDDF601A2573C99200EED208;
+			productRefGroup = BDDF60282573C99500EED208 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BDDF60262573C99500EED208 /* Simple Convert (iOS) */,
+				BDDF602E2573C99500EED208 /* Simple Convert (macOS) */,
+				BDDF60362573C99500EED208 /* Tests iOS */,
+				BDDF60412573C99500EED208 /* Tests macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BDDF60252573C99500EED208 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDDF604D2573C99500EED208 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDDF602D2573C99500EED208 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDDF604E2573C99500EED208 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDDF60352573C99500EED208 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDDF60402573C99500EED208 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BDDF60232573C99500EED208 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDDF604B2573C99500EED208 /* ContentView.swift in Sources */,
+				BDDF60962573E3D100EED208 /* Rates.swift in Sources */,
+				BDDF60A42573E5E000EED208 /* Rate.swift in Sources */,
+				BDDF60492573C99500EED208 /* Simple_ConvertApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDDF602B2573C99500EED208 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDDF604C2573C99500EED208 /* ContentView.swift in Sources */,
+				BDDF60972573E3D100EED208 /* Rates.swift in Sources */,
+				BDDF60A52573E5E000EED208 /* Rate.swift in Sources */,
+				BDDF604A2573C99500EED208 /* Simple_ConvertApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDDF60332573C99500EED208 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDDF603C2573C99500EED208 /* Tests_iOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDDF603E2573C99500EED208 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDDF60472573C99500EED208 /* Tests_macOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BDDF60392573C99500EED208 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BDDF60262573C99500EED208 /* Simple Convert (iOS) */;
+			targetProxy = BDDF60382573C99500EED208 /* PBXContainerItemProxy */;
+		};
+		BDDF60442573C99500EED208 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BDDF602E2573C99500EED208 /* Simple Convert (macOS) */;
+			targetProxy = BDDF60432573C99500EED208 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BDDF604F2573C99500EED208 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BDDF60502573C99500EED208 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		BDDF60522573C99500EED208 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CB29M8E526;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "co.za.jonathancopeland.Simple-Currency";
+				PRODUCT_NAME = "Simple Convert";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BDDF60532573C99500EED208 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CB29M8E526;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "co.za.jonathancopeland.Simple-Currency";
+				PRODUCT_NAME = "Simple Convert";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BDDF60552573C99500EED208 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = CB29M8E526;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "co.za.jonathancopeland.Simple-Currency";
+				PRODUCT_NAME = "Simple Convert";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		BDDF60562573C99500EED208 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = CB29M8E526;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "co.za.jonathancopeland.Simple-Currency";
+				PRODUCT_NAME = "Simple Convert";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		BDDF60582573C99500EED208 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CB29M8E526;
+				INFOPLIST_FILE = "Tests iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "co.za.jonathancopeland.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Simple Convert (iOS)";
+			};
+			name = Debug;
+		};
+		BDDF60592573C99500EED208 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CB29M8E526;
+				INFOPLIST_FILE = "Tests iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "co.za.jonathancopeland.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Simple Convert (iOS)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BDDF605B2573C99500EED208 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = CB29M8E526;
+				INFOPLIST_FILE = "Tests macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "co.za.jonathancopeland.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Simple Convert (macOS)";
+			};
+			name = Debug;
+		};
+		BDDF605C2573C99500EED208 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = CB29M8E526;
+				INFOPLIST_FILE = "Tests macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "co.za.jonathancopeland.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Simple Convert (macOS)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BDDF601E2573C99200EED208 /* Build configuration list for PBXProject "Simple Convert" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDDF604F2573C99500EED208 /* Debug */,
+				BDDF60502573C99500EED208 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BDDF60512573C99500EED208 /* Build configuration list for PBXNativeTarget "Simple Convert (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDDF60522573C99500EED208 /* Debug */,
+				BDDF60532573C99500EED208 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BDDF60542573C99500EED208 /* Build configuration list for PBXNativeTarget "Simple Convert (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDDF60552573C99500EED208 /* Debug */,
+				BDDF60562573C99500EED208 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BDDF60572573C99500EED208 /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDDF60582573C99500EED208 /* Debug */,
+				BDDF60592573C99500EED208 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BDDF605A2573C99500EED208 /* Build configuration list for PBXNativeTarget "Tests macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDDF605B2573C99500EED208 /* Debug */,
+				BDDF605C2573C99500EED208 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BDDF601B2573C99200EED208 /* Project object */;
+}

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD6DFCE2259D1C37000ABFD3 /* FlagDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6DFCE1259D1C37000ABFD3 /* FlagDesign.swift */; };
+		BD6DFCE3259D1C37000ABFD3 /* FlagDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6DFCE1259D1C37000ABFD3 /* FlagDesign.swift */; };
 		BD95D7122598BFB50019B944 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD95D7112598BFB50019B944 /* GameView.swift */; };
 		BD95D7132598BFB50019B944 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD95D7112598BFB50019B944 /* GameView.swift */; };
 		BD95D7192598BFC70019B944 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD95D7182598BFC70019B944 /* ScoreView.swift */; };
@@ -47,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD6DFCE1259D1C37000ABFD3 /* FlagDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlagDesign.swift; sourceTree = "<group>"; };
 		BD95D7112598BFB50019B944 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		BD95D7182598BFC70019B944 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		BD95D71F2598BFEB0019B944 /* LoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadView.swift; sourceTree = "<group>"; };
@@ -125,6 +128,7 @@
 				BD95D7392598C10C0019B944 /* Helper.swift */,
 				BD95D7402598C11E0019B944 /* ViewRouter.swift */,
 				BD95D7592598CD560019B944 /* Score.swift */,
+				BD6DFCE1259D1C37000ABFD3 /* FlagDesign.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -338,6 +342,7 @@
 				BD95D7122598BFB50019B944 /* GameView.swift in Sources */,
 				BD95D7202598BFEB0019B944 /* LoadView.swift in Sources */,
 				BD95D7192598BFC70019B944 /* ScoreView.swift in Sources */,
+				BD6DFCE2259D1C37000ABFD3 /* FlagDesign.swift in Sources */,
 				BD95D7332598C0DD0019B944 /* ParentView.swift in Sources */,
 				BD95D73A2598C10C0019B944 /* Helper.swift in Sources */,
 			);
@@ -353,6 +358,7 @@
 				BD95D7132598BFB50019B944 /* GameView.swift in Sources */,
 				BD95D7212598BFEB0019B944 /* LoadView.swift in Sources */,
 				BD95D71A2598BFC70019B944 /* ScoreView.swift in Sources */,
+				BD6DFCE3259D1C37000ABFD3 /* FlagDesign.swift in Sources */,
 				BD95D7342598C0DD0019B944 /* ParentView.swift in Sources */,
 				BD95D73B2598C10C0019B944 /* Helper.swift in Sources */,
 			);

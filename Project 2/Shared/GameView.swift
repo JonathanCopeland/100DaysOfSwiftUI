@@ -10,8 +10,6 @@ import SwiftUI
 struct GameView: View {
     
     @EnvironmentObject var viewRouter: ViewRouter
-
-    
     @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"].shuffled()
     @State private var correctAnswer = Int.random(in: 0...2)
     @State private var showingScore = false
@@ -20,6 +18,7 @@ struct GameView: View {
     @State private var countryNumber = 0
     
     @State private var timeRemaining = 5
+    
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     

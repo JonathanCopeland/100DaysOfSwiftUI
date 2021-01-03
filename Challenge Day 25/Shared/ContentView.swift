@@ -41,7 +41,7 @@ struct ContentView: View {
         }
         
         .alert(isPresented: $showingScore) {
-            Alert(title: Text("Over"), message: Text("Message"), dismissButton: .default(Text("Play Again")) {
+            Alert(title: Text("Your scored \(playerScore)"), message: Text("Play again to increase your score"), dismissButton: .default(Text("Play Again")) {
                 reset()
             })
         }

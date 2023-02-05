@@ -89,6 +89,7 @@ game.score += 10
 game.score -= 3
 game.score += 1
 
+// *****
 
 struct App {
     var contacts = [String]() {
@@ -130,6 +131,7 @@ struct Player {
     }
     // This is the Struct initialiser
 }
+
 
 
 

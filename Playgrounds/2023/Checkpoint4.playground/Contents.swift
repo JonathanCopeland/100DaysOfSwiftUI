@@ -11,15 +11,15 @@ import Cocoa
 //I’ll give you some hints in a moment, but as always I encourage you to try it yourself first – struggling to remember how things work, and often having to look them up again, is a powerful way to make progress.
 
 
-let number = 49
+let number = 20
 
 enum functionError: Error {
-    case outOfBounds
+    case outOfBounds, noRoot
 }
 
 func squareRoot(value: Int) throws -> Int {
     
-    if value >= 10000 {
+    if value >= 10000 || value < 1 {
         throw functionError.outOfBounds
     }
     
@@ -28,20 +28,24 @@ func squareRoot(value: Int) throws -> Int {
     var z = 0
 
     while y != 0 {
+        
+        if z == 10000 {
+            throw functionError.noRoot
+        }
+        
         y = y - x
         x = x + 2
         z = z + 1
     }
     
     return z
-    
 }
 
 do {
     let result = try squareRoot(value: number)
-    print("The \(number) is \(result)")
+    print("The square root of \(number) is \(result)")
 } catch functionError.outOfBounds {
     print("Out of bounds")
+} catch functionError.noRoot {
+    print("No root")
 }
-
-// Add If you can’t find the square root, throw a “no root” error.

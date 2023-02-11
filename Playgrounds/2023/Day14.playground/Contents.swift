@@ -135,6 +135,8 @@ func printSquare2(of number: Int?) {
     // Otyherwise it will print!
 }
 
+
+
 //var myVar2: Int? = 3
 //
 //if let unwrapped2 = myVar2 {

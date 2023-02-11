@@ -121,6 +121,29 @@ print(user)
 //In combination with guard let to exit the current function if the try? call returns nil.
 //In combination with nil coalescing to attempt something or provide a default value on failure.
 //When calling any throwing function without a return value, when you genuinely don’t care if it succeeded or not – maybe you’re writing to a log file or sending analytics to a server, for example
-///
+
+
+func printSquare2(of number: Int?) {
+    guard let number = number else {
+        print("Missing input")
+        return
+    }
+    
+    // This will use return to exit if there is not number
+
+    print("\(number) x \(number) is \(number * number)")
+    // Otyherwise it will print!
+}
+
+//var myVar2: Int? = 3
+//
+//if let unwrapped2 = myVar2 {
+//    print("Run if myVar has a value inside")
+//}
+//
+//guard let unwrapped2 = myVar2 else {
+//    print("Run if myVar doesn't have a value inside")
+//}
+
 
 

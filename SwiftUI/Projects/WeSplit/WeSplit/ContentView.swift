@@ -53,11 +53,11 @@ struct ContentView: View {
                             Text($0, format: .percent)
                         }
                     }
-                }
+                } 
                 
                 Section {
                     
-                    Text("\(total, format: .currency(code: Locale.current.currencyCode ?? "USD")) (\(totalPerPerson, format: .currency(code: Locale.current.currencyCode ?? "USD")) per person)")
+                    Text("\(total, format: .currency(code: Locale.current.currencyCode ?? "EUR")) (\(totalPerPerson, format: .currency(code: Locale.current.currencyCode ?? "EUR")) per person)")
                     
         
                 } header: {

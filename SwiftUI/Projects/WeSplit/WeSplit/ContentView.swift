@@ -15,20 +15,39 @@ struct ContentView: View {
     let tipPercentages = [10, 15, 20, 25, 0]
     @FocusState private var amountIsFocused: Bool
     
+    var useRedText: Bool {
+        let choice : Bool
+        
+        if(tipPercentage == 0) {
+            choice = true
+        } else {
+            choice = false
+        }
+        
+        return choice
+    }
+
     var totalPerPerson: Double {
         let peopleCount = Double(numberOfPeople + 2)
         let tipSelection = Double(tipPercentage)
         
-        let tipValue = checkAmount / 100 * tipSelection
+        let tipValue = Double(checkAmount / 100 * tipSelection)
         let grandTotal = checkAmount + tipValue
         let amountPerPerson = grandTotal / peopleCount
 
         return amountPerPerson
     }
-    
 
     var total: Double {
-        let total = checkAmount + (checkAmount / Double(100 / tipPercentage))
+        
+        let total : Double
+        
+        if(tipPercentage == 0) {
+            total = checkAmount
+        } else {
+            total = checkAmount + (checkAmount / Double(100 / tipPercentage))
+        }
+        
         
         return total
     }
@@ -57,8 +76,12 @@ struct ContentView: View {
                 
                 Section {
                     
-                    Text("\(total, format: .currency(code: Locale.current.currencyCode ?? "EUR")) (\(totalPerPerson, format: .currency(code: Locale.current.currencyCode ?? "EUR")) per person)")
-                    
+                    HStack {
+                        Text("\(total, format: .currency(code: Locale.current.currencyCode ?? "EUR"))")
+                        Text("(\(totalPerPerson, format: .currency(code: Locale.current.currencyCode ?? "EUR")) per person)")
+                            .foregroundColor(useRedText ? .red : .secondary)
+                    }
+
         
                 } header: {
                     Text("Total")

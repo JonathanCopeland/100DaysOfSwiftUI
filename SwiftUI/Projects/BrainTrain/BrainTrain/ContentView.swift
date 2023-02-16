@@ -21,6 +21,8 @@ struct ContentView: View {
     @State private var promptMessage = Int.random(in: 0...1)
     @State private var correctChoice = 0
     
+    @State private var blurRadius: CGFloat = 0
+    
     
     var body: some View {
         VStack (spacing: 30) {
@@ -58,7 +60,16 @@ struct ContentView: View {
                 ForEach(0..<3) { number in
 
                     Button(action: {
-                        buttonTapped(number)
+//                        buttonTapped(number)
+                        withAnimation {
+                            if blurRadius == 20 {
+                                blurRadius = 0
+                            }
+                            else {
+                                blurRadius = 20
+                            }
+                            
+                        }
                     }) {
                         VStack (spacing: 8) {
                             Text("\(optionsImages[number])")
@@ -70,6 +81,8 @@ struct ContentView: View {
                         .foregroundColor(Color.white)
                         .background(Color.brown)
                         .clipShape(RoundedRectangle(cornerRadius: 50))
+                        .blur(radius: blurRadius)
+                        
                     }
                     
                 }

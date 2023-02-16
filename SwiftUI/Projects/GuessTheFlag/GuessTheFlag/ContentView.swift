@@ -26,8 +26,6 @@ extension View {
 }
 
 
-
-
 struct ContentView: View {
     
     @State private var showingScore = false

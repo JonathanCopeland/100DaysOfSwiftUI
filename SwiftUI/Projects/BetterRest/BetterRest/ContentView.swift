@@ -17,7 +17,7 @@ struct ContentView: View {
     @State private var alertTitle = ""
     @State private var alertMessage = ""
     @State private var showingAlert = false
-    
+        
     static var defaultWakeTime: Date {
         var components = DateComponents()
         components.hour = 7
@@ -28,46 +28,71 @@ struct ContentView: View {
     
     var body: some View {
         
+        
         NavigationView {
+            
+            
             Form {
                 
-                VStack (alignment: .leading, spacing: 8) {
-                    Text("When do you want to wake up?")
-                        .font(.headline)
+                Section {
+                    
+                    VStack (alignment: .leading, spacing: 8) {
+                        Text("When do you want to wake up?")
+                            .font(.headline)
 
-                    DatePicker("Please enter a time", selection: $wakeUp, displayedComponents: .hourAndMinute)
-                        .labelsHidden()
+                        DatePicker("Please enter a time", selection: $wakeUp, displayedComponents: .hourAndMinute)
+                            .labelsHidden()
+                            .onChange(of: wakeUp, perform: { _ in
+                                calculateBedtime()
+                            })
+
+                    }
+
+                    VStack (alignment: .leading, spacing: 8) {
+                        
+                        Text("Desired amount of sleep")
+                            .font(.headline)
+                        
+                        Stepper("\(sleepAmount.formatted()) hours", value: $sleepAmount, in: 4...12, step: 0.25, onEditingChanged: {_ in
+                            calculateBedtime()
+                        })
+                    
+                        
+                    }
+                    
+                    VStack (alignment: .leading, spacing: 8) {
+                        Text("Daily coffee intake")
+                            .font(.headline)
+                        Stepper(coffeeAmount == 1 ? "1 cup" : "\(coffeeAmount) cups", value: $coffeeAmount, in: 1...20, onEditingChanged: {_ in
+                            calculateBedtime()
+                        })
+                    }
+
                 }
 
-                VStack (alignment: .leading, spacing: 8) {
-                    
-                    Text("Desired amount of sleep")
-                        .font(.headline)
-                    
-                    Stepper("\(sleepAmount.formatted()) hours", value: $sleepAmount, in: 4...12, step: 0.25)
+                
+                
+                Section {
+                    VStack (alignment: .leading, spacing: 8) {
+                        Text("\(alertTitle)")
+                            .fontWeight(.semibold)
+                        Text("\(alertMessage)")
+                    }
                 }
                 
-                VStack (alignment: .leading, spacing: 8) {
-                    Text("Daily coffee intake")
-                        .font(.headline)
-                    
-                    Stepper(coffeeAmount == 1 ? "1 cup" : "\(coffeeAmount) cups", value: $coffeeAmount, in: 1...20)
-                }
+                
+                
+                
             }
             .navigationTitle("BetterRest")
-            .toolbar {
-                Button("Calculate", action: calculateBedtime)
-            }
-            .alert(alertTitle, isPresented: $showingAlert) {
-                Button("OK") { }
-            } message: {
-                Text(alertMessage)
-            }
+  
             
         }
-        
-        
+        .onAppear(perform: calculateBedtime)
+
     }
+    
+
     
     func calculateBedtime() {
         do {
@@ -89,9 +114,9 @@ struct ContentView: View {
             alertTitle = "Error"
             alertMessage = "Sorry, there was a problem calculating your bedtime."
         }
-        showingAlert = true
     }
     
+
     
     
     

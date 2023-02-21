@@ -11,6 +11,7 @@
 		BDB4296129A3DE9A0046563B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB4296029A3DE9A0046563B /* ContentView.swift */; };
 		BDB4296329A3DE9B0046563B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB4296229A3DE9B0046563B /* Assets.xcassets */; };
 		BDB4296629A3DE9B0046563B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB4296529A3DE9B0046563B /* Preview Assets.xcassets */; };
+		BDB4296F29A4AE630046563B /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = BDB4296E29A4AE630046563B /* start.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		BDB4296029A3DE9A0046563B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BDB4296229A3DE9B0046563B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BDB4296529A3DE9B0046563B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BDB4296E29A4AE630046563B /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = start.txt; path = "Preview Content/start.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 				BDB4295E29A3DE9A0046563B /* WordScrambleApp.swift */,
 				BDB4296029A3DE9A0046563B /* ContentView.swift */,
 				BDB4296229A3DE9B0046563B /* Assets.xcassets */,
+				BDB4296E29A4AE630046563B /* start.txt */,
 				BDB4296429A3DE9B0046563B /* Preview Content */,
 			);
 			path = WordScramble;
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDB4296629A3DE9B0046563B /* Preview Assets.xcassets in Resources */,
+				BDB4296F29A4AE630046563B /* start.txt in Resources */,
 				BDB4296329A3DE9B0046563B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

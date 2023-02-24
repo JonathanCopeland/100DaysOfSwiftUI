@@ -12,11 +12,11 @@ struct ContentView: View {
     @State private var usedWords = [String]()
     @State private var rootWord = ""
     @State private var newWord = ""
-    
     @State private var errorTitle = ""
     @State private var errorMessage = ""
     @State private var showingError = false
-    
+    @State private var score = 0
+    @State private var startAgainConfirmation = false
     
     var body: some View {
         NavigationView {
@@ -25,7 +25,7 @@ struct ContentView: View {
                     TextField("Enter your word", text: $newWord).autocapitalization(.none)
                 }
                 
-                Section {
+                Section ("Answers") {
                         
                     ForEach (usedWords, id: \.self) { word in
                         HStack {
@@ -33,9 +33,12 @@ struct ContentView: View {
                             Text(word)
                         }
                     }
-                    
-
                 }
+                
+                Section ("Score")  {
+                    Text("\(score)")
+                }
+                
             }
             .navigationTitle(rootWord)
             .onSubmit(addNewWord)
@@ -45,7 +48,23 @@ struct ContentView: View {
             } message: {
                 Text(errorMessage)
             }
+            .alert("Are you sure you want a new word?", isPresented: $startAgainConfirmation) {
+                Button("Confirm", role: .destructive, action: startGame)
+                
+            } message: {
+                Text("This will reset your answers and score")
+            }
+            .toolbar {
+                ToolbarItemGroup(placement: .destructiveAction) {
+                    Spacer()
+                    
+                    Button("New word") {
+                        startAgainConfirmation = true
+                    }
+                }
+            }
         }
+        
         
         
 
@@ -54,6 +73,16 @@ struct ContentView: View {
     func addNewWord() {
         let answer = newWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
         guard answer.count > 0 else { return }
+        
+        guard isDuplicate(word: answer) else {
+            wordError(title: "Word isn't unique", message: "Your answer must be unique")
+            return
+        }
+        
+        guard isLongEnough(word: answer) else {
+            wordError(title: "Word too short", message: "Your answer must be over three characters or more")
+            return
+        }
         
         guard isOriginal(word: answer) else {
             wordError(title: "Word used already", message: "Be more original")
@@ -74,11 +103,15 @@ struct ContentView: View {
             usedWords.insert(answer, at: 0)
         }
         
+        score += answer.count
+        
         newWord = ""
         
     }
     
     func startGame() {
+        usedWords = []
+        score = 0
         if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
             if let startWords = try? String(contentsOf: startWordsURL) {
                 let allWords = startWords.components(separatedBy: "\n")
@@ -88,6 +121,7 @@ struct ContentView: View {
         } else {
             fatalError("Could not load start.txt from bundle")
         }
+        
             
     }
     
@@ -115,11 +149,29 @@ struct ContentView: View {
         return misspelledRange.location == NSNotFound
     }
     
+    func isLongEnough (word: String) -> Bool {
+        if word.count > 2 {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func isDuplicate (word: String) -> Bool {
+        if rootWord == word {
+            return false
+        } else {
+            return true
+        }
+    }
+    
     func wordError(title: String, message: String) {
         errorTitle = title
         errorMessage = message
         showingError = true
     }
+    
+
     
     
 }

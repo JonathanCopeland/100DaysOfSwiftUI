@@ -84,8 +84,7 @@ struct ContentView: View {
                 
                 
             }
-            .navigationTitle("BetterRest")
-  
+            .navigationTitle("Better  
             
         }
         .onAppear(perform: calculateBedtime)

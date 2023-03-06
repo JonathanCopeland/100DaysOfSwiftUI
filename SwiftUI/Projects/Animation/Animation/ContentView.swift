@@ -8,28 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    @State private var animationAmount = 0.0
-    
-    var body: some View {
-        Button("Tap Me") {
-            withAnimation(.interpolatingSpring(stiffness: 5, damping: 1)) {
-                animationAmount += 360
-            }
-        }
-        .padding(50)
-        .background(.red)
-        .foregroundColor(.white)
-        .clipShape(Circle())
-        .rotation3DEffect(.degrees(animationAmount), axis: (x: 0, y: 1, z: 0))
+    @State private var isShowingRed = false
 
+    var body: some View {
+        VStack {
+            Button("Tap Me") {
+                withAnimation {
+                    isShowingRed.toggle()
+                }
+            }
+            
+            if isShowingRed {
+                Rectangle()
+                    .fill(.red)
+                    .frame(width: 200, height: 200)
+                    .transition(.asymmetric(insertion: .scale, removal: .opacity))
+                
+            }
+            
+
+        }
     }
-    
-    
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        VStack {
+            ContentView()
+        }
     }
 }

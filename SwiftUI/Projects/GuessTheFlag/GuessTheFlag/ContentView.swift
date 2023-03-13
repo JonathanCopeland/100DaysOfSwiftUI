@@ -38,6 +38,10 @@ struct ContentView: View {
     @State private var correctAnswer = Int.random(in: 0...2)
     
     
+    @State private var flagAngle = [0.0, 0.0, 0.0]
+    @State private var flagOpacity = [1.0, 1.0, 1.0]
+    @State private var flagBlur: [CGFloat] = [0, 0, 0]
+    
     
     var body: some View {
         ZStack {
@@ -60,6 +64,11 @@ struct ContentView: View {
                     } label: {
                         Flag(with: countries[number])
                     }
+                    .rotation3DEffect(.degrees(self.flagAngle[number]), axis: (x: 0, y: 1, z: 0))
+                    .opacity(self.flagOpacity[number])
+                    .blur(radius: self.flagBlur[number])
+                    .animation(.default)
+                    
                 }
             }
         }
@@ -81,13 +90,16 @@ struct ContentView: View {
     }
     
     func flagTapped(_ number: Int) {
-        
         tapped = number
+
         if number == correctAnswer {
             scoreTitle = "Correct"
             score += 1
+            
+            correctAnimation()
         } else {
             scoreTitle = "Wrong"
+            wrongAnimation()
         }
         
 
@@ -95,9 +107,11 @@ struct ContentView: View {
         showingScore = true
     }
     
+
+    
     func askQuestion() {
         
-        if(turns == 2) {
+        if(turns == 5) {
             gameOver = true
             return
         }
@@ -106,6 +120,10 @@ struct ContentView: View {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
         turns += 1
+        
+        flagAngle = [0.0, 0.0, 0.0]
+        flagOpacity = [1.0, 1.0, 1.0]
+        flagBlur = [0, 0, 0]
     }
     
     func newGame() {
@@ -113,8 +131,33 @@ struct ContentView: View {
         correctAnswer = Int.random(in: 0...2)
         turns = 0
         score = 0
+        
+        flagAngle = [0.0, 0.0, 0.0]
+        flagOpacity = [1.0, 1.0, 1.0]
+        flagBlur = [0, 0, 0]
 
     }
+    
+    func correctAnimation() {
+         for flag in 0...2 {
+             if flag == correctAnswer {
+                 flagAngle[flag] = 360.0
+             } else {
+                 flagOpacity[flag] = 0.25
+             }
+         }
+     }
+     
+     func wrongAnimation() {
+         for flag in 0...2 {
+             if flag != correctAnswer {
+                 flagBlur[flag] = 6
+             }
+         }
+     }
+ 
+
+
 }
 
 struct ContentView_Previews: PreviewProvider {

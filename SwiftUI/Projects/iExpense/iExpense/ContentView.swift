@@ -10,27 +10,19 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @State private var numbers = [Int]()
-    @State private var currentNumber = 1
+    
+    @State private var tapCount = UserDefaults.standard.integer(forKey: "Tap")
+
 
     var body: some View {
-        VStack {
-            
-            
-            List {
-                ForEach(numbers, id: \.self) {
-                    Text("Row \($0)")
-                }
-            }
+        Button("Tap count: \(tapCount)") {
+            tapCount += 1
+            UserDefaults.standard.set(self.tapCount, forKey: "Tap")
 
-            Button("Add Number") {
-                numbers.append(currentNumber)
-                currentNumber += 1
-            }
-            
-            
         }
     }
+    
+
 }
 
 struct ContentView_Previews: PreviewProvider {

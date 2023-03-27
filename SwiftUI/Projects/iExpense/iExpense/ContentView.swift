@@ -20,20 +20,12 @@ struct ContentView: View {
         
         NavigationView {
             List {
-                ForEach(expenses.items) { item in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(item.name)
-                                .font(.headline)
-                            Text(item.type)
-                        }
-
-                        Spacer()
-                        Text(item.amount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
-                    }
+                Section(header: Text("Personal")) {
+                    personalExpenses
                 }
-                .onDelete(perform: removeItems)
-
+                Section(header: Text("Business")) {
+                    businessExpenses
+                }
             }
             .navigationTitle("iExpense")
             .toolbar {
@@ -49,11 +41,57 @@ struct ContentView: View {
         }
     }
     
-    func removeItems(at offsets: IndexSet) {
-        expenses.items.remove(atOffsets: offsets)
+
+    
+    
+    var personalExpenses: some View {
+        ForEach(expenses.items.filter {
+            $0.type == "Personal"
+        }) { item in
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(item.name)
+                        .font(.headline)
+                    Text(item.type)
+                }
+
+                Spacer()
+                Text(item.amount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
+                .foregroundColor(item.amount > 100 ? .red: item.amount > 10 ? .black : .gray)
+                
+            }
+        }
+        .onDelete(perform: removeItems)
+        
     }
     
 
+    
+    var businessExpenses: some View {
+        ForEach(expenses.items.filter {
+            $0.type == "Business"
+        }) { item in
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(item.name)
+                        .font(.headline)
+                    Text(item.type)
+                }
+
+                Spacer()
+                Text(item.amount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
+                .foregroundColor(item.amount > 100 ? .red: item.amount > 10 ? .black : .gray)
+                
+            }
+        }
+        .onDelete(perform: removeItems)
+    }
+    
+    func removeItems(at offsets: IndexSet) {
+        
+        expenses.items.remove(atOffsets: offsets)
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

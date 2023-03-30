@@ -9,18 +9,17 @@ import SwiftUI
 
 struct TestList: View {
     
-    @ObservedObject var expenses: Expenses
+    let title: String
+    let expenses: [ExpenseItem]
+    let deleteItems: (IndexSet) -> Void
+
     
     var body: some View {
         
         NavigationView {
             List {
-                Section(header: Text("Personal")) {
-                    personalExpenses
-                }
-                Section(header: Text("Business")) {
-                    businessExpenses
-                }
+                ExpenseSection(title: "Personal", expenses: expenses.personalItems, deleteItems: removePersonalItems)
+
             }
             .navigationTitle("iExpense")
 
@@ -28,47 +27,65 @@ struct TestList: View {
         }
     }
     
-    var personalExpenses: some View {
-        
-        
-        
-        ForEach(expenses.items.filter {
-            $0.type == "Personal"
-        }) { item in
-            Text(item.name)
-        }
-        .onDelete(perform: removeItems)
-
-
-        
-        
-
-        
-    }
+//    var personalExpenses: some View {
+//
+//
+//
+//        ForEach(expenses.items.filter {
+//            $0.type == "Personal"
+//        }) { item in
+//            Text(item.name)
+//        }
+//        .onDelete(perform: removeItems)
+//
+//
+//
+//
+//
+//
+//    }
     
     var businessExpenses: some View {
 
         
-        ForEach(expenses.items.filter {
-            $0.type == "Business"
-        }) { item in
+        ForEach(expenses) { item in
             Text(item.name)
         }
-        .onDelete(perform: removeItems)
+//        .onDelete(perform: removeItems)
         
     }
     
     
-    func removeItems(at offsets: IndexSet) {
-        expenses.items.remove(atOffsets: offsets)
+//    func removeItems(at offsets: IndexSet) {
+//        expenses.items.remove(atOffsets: offsets)
+//    }
+//
+    
+
+
+    func removeItems(at offsets: IndexSet, in inputArray: [ExpenseItem]) {
+        var objectsToDelete = IndexSet()
+
+        for offset in offsets {
+            let item = inputArray[offset]
+
+            if let index = expenses.items.firstIndex(of: item) {
+                objectsToDelete.insert(index)
+            }
+        }
+
+        expenses.items.remove(atOffsets: objectsToDelete)
     }
     
+    func removePersonalItems(at offsets: IndexSet) {
+        removeItems(at: offsets, in: expenses.personalItems)
+    }
     
     
 }
 
 struct TestList_Previews: PreviewProvider {
     static var previews: some View {
-        TestList(expenses: Expenses())
+        TestList(title: "Personal", expenses: expenses.personalItems, deleteItems: removePersonalItems)
     }
 }

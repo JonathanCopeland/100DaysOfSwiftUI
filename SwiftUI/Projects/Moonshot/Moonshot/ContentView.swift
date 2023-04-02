@@ -7,23 +7,13 @@
 
 import SwiftUI
 
+let layout = [
+    GridItem(.adaptive(minimum: 80, maximum: 120))
+]
+
 struct ContentView: View {
     var body: some View {
-        
-        Button("Decode JSON") {
-            let input = """
-            {
-                "name": "Taylor Swift",
-                "address": {
-                    "street": "555, Taylor Swift Avenue",
-                    "city": "Nashville"
-                }
-            }
-            """
-
-            // more code to come
-        }
-
+        Text("Hello")
     }
 }
 

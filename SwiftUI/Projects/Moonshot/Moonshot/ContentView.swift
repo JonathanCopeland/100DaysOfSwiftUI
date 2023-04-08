@@ -9,41 +9,39 @@ import SwiftUI
 
 struct ContentView: View {
     
+    let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
+    let missions: [Mission] = Bundle.main.decode("missions.json")
+    
     @State private var showingGrid = true
 
     var body: some View {
-        
-        NavigationStack {
-            VStack {
+        NavigationView {
+            Group {
                 if(showingGrid) {
-                    MissionsGrid()
-                        .transition(.move(edge: .leading))
+                    MissionsGrid(astronauts: astronauts, missions: missions)
                 }
                 else {
-                    MissionsList()
-                        .transition(.move(edge: .trailing))
+                    MissionsList(astronauts: astronauts, missions: missions)
                 }
             }
-        }
-        .toolbar {
-            ToolbarItem(placement: .bottomBar) {
-                Picker("", selection: $showingGrid){
-                    Image(systemName: "square.grid.2x2").tag(true)
-                    Image(systemName: "rectangle.grid.1x2").tag(false)
-
-                }
-                .pickerStyle(.segmented)
-                .onTapGesture {
-                    withAnimation {
-                        showingGrid.toggle()
+            
+            .toolbar {
+                Button {
+                    showingGrid.toggle()
+                } label: {
+                    if showingGrid {
+                        Label("Show as table", systemImage: "list.dash")
+                    } else {
+                        Label("Show as grid", systemImage: "square.grid.2x2")
                     }
                 }
-
             }
+            .navigationTitle("Moonshot")
+            .background(.darkBackground)
+            .preferredColorScheme(.dark)
+
         }
-        
-        
-        
+
     }
 }
 

@@ -15,8 +15,9 @@ struct MissionsGrid: View {
         GridItem(.adaptive(minimum: 150))
     ]
 
-    let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
-    let missions: [Mission] = Bundle.main.decode("missions.json")
+    let astronauts: [String: Astronaut]
+    let missions: [Mission]
+
 
     var body: some View {
         ScrollView {
@@ -54,9 +55,6 @@ struct MissionsGrid: View {
             }
             .padding([.horizontal, .bottom])
         }
-        .navigationTitle("Moonshot")
-        .background(.darkBackground)
-        .preferredColorScheme(.dark)
         
         
     }
@@ -65,7 +63,8 @@ struct MissionsGrid: View {
 
 struct MissionsGrid_Previews: PreviewProvider {
     static var previews: some View {
-        MissionsGrid()
+        MissionsGrid(astronauts: Bundle.main.decode("astronauts.json"), missions: Bundle.main.decode("missions.json"))
+            .preferredColorScheme(.dark)
     }
 }
 

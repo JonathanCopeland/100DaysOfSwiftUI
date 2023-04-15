@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD5415CC29EA96CE001508CC /* HabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5415CB29EA96CE001508CC /* HabitView.swift */; };
 		BDBE4C7329E93C140099D481 /* HabitTrackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBE4C7229E93C140099D481 /* HabitTrackApp.swift */; };
 		BDBE4C7529E93C140099D481 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBE4C7429E93C140099D481 /* ContentView.swift */; };
 		BDBE4C7729E93C150099D481 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDBE4C7629E93C150099D481 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD5415CB29EA96CE001508CC /* HabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitView.swift; sourceTree = "<group>"; };
 		BDBE4C6F29E93C140099D481 /* HabitTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDBE4C7229E93C140099D481 /* HabitTrackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTrackApp.swift; sourceTree = "<group>"; };
 		BDBE4C7429E93C140099D481 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			children = (
 				BDBE4C7229E93C140099D481 /* HabitTrackApp.swift */,
 				BDBE4C7429E93C140099D481 /* ContentView.swift */,
+				BD5415CB29EA96CE001508CC /* HabitView.swift */,
 				BDBE4C8029E93D0A0099D481 /* HabitItem.swift */,
 				BDBE4C8229E93EDA0099D481 /* Habits.swift */,
 				BDBE4C8429E93F700099D481 /* AddView.swift */,
@@ -149,6 +152,7 @@
 				BDBE4C8129E93D0A0099D481 /* HabitItem.swift in Sources */,
 				BDBE4C7529E93C140099D481 /* ContentView.swift in Sources */,
 				BDBE4C8529E93F700099D481 /* AddView.swift in Sources */,
+				BD5415CC29EA96CE001508CC /* HabitView.swift in Sources */,
 				BDBE4C8329E93EDA0099D481 /* Habits.swift in Sources */,
 				BDBE4C7329E93C140099D481 /* HabitTrackApp.swift in Sources */,
 			);

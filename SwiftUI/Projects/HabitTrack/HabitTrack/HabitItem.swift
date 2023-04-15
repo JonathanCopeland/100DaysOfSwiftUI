@@ -12,4 +12,7 @@ struct HabitItem: Codable, Identifiable, Equatable {
     var name: String
     var progress: Int
     var goal: Int
+    
+    static var example = HabitItem(name: "Go running", progress: 0, goal: 20)
+
 }

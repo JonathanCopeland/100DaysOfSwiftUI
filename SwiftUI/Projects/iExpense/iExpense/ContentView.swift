@@ -14,8 +14,6 @@ struct ContentView: View {
     @StateObject var expenses = Expenses()
     @State private var showingAddExpense = false
 
-
-
     var body: some View {
         
         NavigationView {

@@ -19,23 +19,23 @@ struct ContentView: View {
         
         NavigationView {
             List {
-                
                 ForEach(habits.items) { item in
-                    
                     NavigationLink{
-                        HabitView(data: habits, habitItem: HabitItem(name: item.name, progress: item.progress, goal: item.goal))
+                        HabitView(data: habits, habitItem: item)
                     } label: {
-                        Text(item.name)
+                        HStack {
+                            Text(item.name)
+                            Spacer()
+                            
+                            Text(String(item.progress))
+                                .font(.caption.weight(.black))
+                                .padding(5)
+                                .frame(minWidth: 50)
+                                .background(color(for: item))
+                                .clipShape(Capsule())
+                        }
+                        
                     }
-                    
-//                    HStack {
-//                        VStack(alignment: .leading) {
-//                            Text(item.name)
-//                                .font(.headline)
-//                            Text("\(item.progress) / \(item.goal) days completed")
-//                        }
-//
-//                    }
                 }
                 .onDelete(perform: deleteItems)
 
@@ -45,7 +45,7 @@ struct ContentView: View {
             .navigationTitle("HabitTrack")
             .toolbar {
                 Button {
-                    showingAddHabit = true
+                    showingAddHabit.toggle()
                 } label: {
                     Image(systemName: "plus")
                 }
@@ -61,6 +61,19 @@ struct ContentView: View {
         habits.items.remove(atOffsets: offsets)
     }
     
+    func color(for item: HabitItem) -> Color {
+        if item.progress < 3 {
+            return .red
+        } else if item.progress < 10 {
+            return .orange
+        } else if item.progress < 20 {
+            return .green
+        } else if item.progress < 50 {
+            return .blue
+        } else {
+            return .indigo
+        }
+    }
 
     
 }

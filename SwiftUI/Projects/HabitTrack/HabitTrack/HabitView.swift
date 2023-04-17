@@ -13,28 +13,21 @@ struct HabitView: View {
     var habitItem : HabitItem
     
     var body: some View {
-        
-        
-        NavigationView {
-            List {
-                Text("Completion count: \(habitItem.progress)")
+        List {
+            Text("Completion count: \(habitItem.progress)")
 
-                Button("Mark Completed") {
-                    var newActivity = habitItem
-                    newActivity.progress += 1
-                    newActivity.name = "Changed!"
-                    
-                    if let index = data.items.firstIndex(of: habitItem) {
-                        data.items[index] = newActivity
-                    }
+            Button("Mark Completed") {
+                var newActivity = habitItem
+                newActivity.progress += 1
+                
+                if let index = data.items.firstIndex(of: habitItem) {
+                    data.items[index] = newActivity
                 }
-
             }
-            .navigationTitle(habitItem.name)
 
         }
-        
-        
+        .navigationTitle(habitItem.name)
+
     }
     
 

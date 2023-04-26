@@ -15,13 +15,16 @@ struct AddBookView: View {
     @State private var title = ""
     @State private var author = ""
     @State private var rating = 3
-    @State private var genre = ""
-    @State private var review = ""
+    @State private var genre = "Fantasy"
+    @State private var review = "Your review"
+    
     
     let genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
 
 
+
     var body: some View {
+
         NavigationView {
             Form {
                 Section {
@@ -37,6 +40,8 @@ struct AddBookView: View {
 
                 Section {
                     TextEditor(text: $review)
+                        .foregroundColor(review.contains("Your review") ? Color.secondary : Color.primary)
+                    
                     RatingView(rating: $rating)
                     
                 } header: {
@@ -45,23 +50,51 @@ struct AddBookView: View {
 
                 Section {
                     Button("Save") {
+                        
+                    
                         let newBook = Book(context: moc)
                         newBook.id = UUID()
                         newBook.title = title
                         newBook.author = author
                         newBook.rating = Int16(rating)
                         newBook.genre = genre
-                        newBook.review = review
+                        newBook.date = Date.now
+                        
+                        if(review.contains("Your review")){
+                            newBook.review = ""
+                        } else {
+                            newBook.review = review
+                        }
+                        
 
                         try? moc.save()
                         dismiss()
                     }
+                    .disabled(hasValidAddress == false)
                 }
             }
             .navigationTitle("Add Book")
         }
         
+        
+        
     }
+    
+    var hasValidAddress: Bool {
+        if title.isEmpty || author.isEmpty {
+            return false
+        }
+
+
+        if(title == " " || author == " ") {
+            return false
+        }
+
+        return true
+    }
+    
+    
+
 }
 
 struct AddBookView_Previews: PreviewProvider {

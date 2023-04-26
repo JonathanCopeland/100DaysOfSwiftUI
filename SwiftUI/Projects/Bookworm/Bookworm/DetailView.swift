@@ -16,6 +16,7 @@ struct DetailView: View {
     
     let book: Book
     
+        
     var body: some View {
         ScrollView {
             ZStack(alignment: .bottomTrailing) {
@@ -36,11 +37,21 @@ struct DetailView: View {
                 .font(.title)
                 .foregroundColor(.secondary)
 
-            Text(book.review ?? "No review")
-                .padding()
+
+            if(book.review != "") {
+                Text(book.review ?? "No review")
+                    .padding()
+            }
 
             RatingView(rating: .constant(Int(book.rating)))
                 .font(.largeTitle)
+                .padding()
+            
+            if let date = book.date {
+                Text(date.formatted(date: .abbreviated, time: .omitted))
+                    .padding()
+            }
+            
         }
         .navigationTitle(book.title ?? "Unknown Book")
         .navigationBarTitleDisplayMode(.inline)

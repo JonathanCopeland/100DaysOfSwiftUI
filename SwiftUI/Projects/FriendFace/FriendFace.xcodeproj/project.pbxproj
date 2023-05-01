@@ -13,7 +13,6 @@
 		BDCE74EF29FFA44D007F8990 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDCE74EE29FFA44D007F8990 /* Preview Assets.xcassets */; };
 		BDCE74F629FFA499007F8990 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCE74F529FFA499007F8990 /* User.swift */; };
 		BDCE74F829FFA4A2007F8990 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCE74F729FFA4A2007F8990 /* Friend.swift */; };
-		BDCE74FA29FFA675007F8990 /* FriendFaceData.json in Resources */ = {isa = PBXBuildFile; fileRef = BDCE74F929FFA675007F8990 /* FriendFaceData.json */; };
 		BDCE74FC29FFA6E2007F8990 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCE74FB29FFA6E2007F8990 /* Bundle-Decodable.swift */; };
 		BDCE74FE2A00316A007F8990 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCE74FD2A00316A007F8990 /* UserView.swift */; };
 /* End PBXBuildFile section */
@@ -26,7 +25,6 @@
 		BDCE74EE29FFA44D007F8990 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BDCE74F529FFA499007F8990 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BDCE74F729FFA4A2007F8990 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
-		BDCE74F929FFA675007F8990 /* FriendFaceData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FriendFaceData.json; sourceTree = "<group>"; };
 		BDCE74FB29FFA6E2007F8990 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		BDCE74FD2A00316A007F8990 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,7 +65,6 @@
 				BDCE74F529FFA499007F8990 /* User.swift */,
 				BDCE74F729FFA4A2007F8990 /* Friend.swift */,
 				BDCE74EB29FFA44D007F8990 /* Assets.xcassets */,
-				BDCE74F929FFA675007F8990 /* FriendFaceData.json */,
 				BDCE74FB29FFA6E2007F8990 /* Bundle-Decodable.swift */,
 				BDCE74ED29FFA44D007F8990 /* Preview Content */,
 			);
@@ -142,7 +139,6 @@
 			files = (
 				BDCE74EF29FFA44D007F8990 /* Preview Assets.xcassets in Resources */,
 				BDCE74EC29FFA44D007F8990 /* Assets.xcassets in Resources */,
-				BDCE74FA29FFA675007F8990 /* FriendFaceData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

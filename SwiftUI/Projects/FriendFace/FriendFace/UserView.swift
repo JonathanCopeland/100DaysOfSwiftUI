@@ -13,6 +13,8 @@ struct UserView: View {
     
     var body: some View {
         
+        // This works with local JSON, I now need to do it call it remotely
+        
         List {
             Section {
                 Text(user.name)

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UserView: View {
         
-    let user: User
+    let user: CachedUser
     
     var body: some View {
         
@@ -17,30 +17,30 @@ struct UserView: View {
         
         List {
             Section {
-                Text(user.name)
+                Text(user.wrappedName)
                 Text("\(user.age) years old")
-                Text(user.company)
-                Text(user.about)
+                Text(user.wrappedCompany)
+                Text(user.wrappedAbout)
             }
             
             Section("Friends") {
-                ForEach(user.friends) { friend in
-                    Text(friend.name)
+                ForEach(user.friendsArray) { friend in
+                    Text(friend.wrappedName)
                 }
             }
 
         }
-        .navigationTitle(user.name)
+        .navigationTitle(user.wrappedName)
         .navigationBarTitleDisplayMode(.inline)
         
     }
 }
 
-struct UserView_Previews: PreviewProvider {
-
-    static let users = Bundle.main.decode([User].self, from: "FriendFaceData.json")
-
-    static var previews: some View {
-        UserView(user: users[0])
-    }
-}
+//struct UserView_Previews: PreviewProvider {
+//
+//    static let users = Bundle.main.decode([User].self, from: "FriendFaceData.json")
+//
+//    static var previews: some View {
+//        UserView(user: users[0])
+//    }
+//}

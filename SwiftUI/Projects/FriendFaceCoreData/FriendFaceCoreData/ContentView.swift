@@ -13,9 +13,9 @@ struct ContentView: View {
     // let users = Bundle.main.decode([User].self, from: "FriendFaceData.json")
     // Above is the code for local JSON data
     
-    @State private var users = [User]()
-    
-    
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.name)]) var users: FetchedResults<CachedUser>
+
     var body: some View {
 
         NavigationView {
@@ -24,8 +24,8 @@ struct ContentView: View {
                     UserView(user: user)
                 } label: {
                     VStack (alignment: .leading) {
-                        Text(user.name)
-                        Text(user.email)
+                        Text(user.wrappedName)
+                        Text(user.wrappedEmail)
                     }
                 }
             }
@@ -50,13 +50,45 @@ struct ContentView: View {
             let (data, _) = try await URLSession.shared.data(from: url)
 
             if let decodedResponse = try? JSONDecoder().decode([User].self, from: data) {
-                users = decodedResponse
+                
+                
+                
+                let users = decodedResponse
+                await MainActor.run {
+                    updateCache(with: users)
+                }
             }
             
         } catch {
             print("Invalid data")
         }
         
+    }
+    
+    func updateCache(with downloadedUsers: [User]) {
+        for user in downloadedUsers {
+            let cachedUser = CachedUser(context: moc)
+
+            cachedUser.id = user.id
+            cachedUser.isActive = user.isActive
+            cachedUser.name = user.name
+            cachedUser.age = Int16(user.age)
+            cachedUser.company = user.company
+            cachedUser.email = user.email
+            cachedUser.address = user.address
+            cachedUser.about = user.about
+            cachedUser.registered = user.registered
+            cachedUser.tags = user.tags.joined(separator: ",")
+
+            for friend in user.friends {
+                let cachedFriend = CachedFriend(context: moc)
+                cachedFriend.id = friend.id
+                cachedFriend.name = friend.name
+                cachedUser.addToFriends(cachedFriend)
+            }
+        }
+
+        try? moc.save()
     }
 
 }

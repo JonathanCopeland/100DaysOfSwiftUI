@@ -26,6 +26,7 @@ struct ContentView: View {
                 } label: {
                     VStack (alignment: .leading) {
                         Text(user.name)
+                            .fontWeight(.medium)
                         Text(user.email)
                     }
                 }

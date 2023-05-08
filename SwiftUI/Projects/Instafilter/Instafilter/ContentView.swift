@@ -26,6 +26,17 @@ struct ContentView: View {
     
     @State private var showingFilterSheet = false
     
+    enum filterTypes {
+        case intensity, radius, scale
+    }
+    
+    
+    struct LoadingView: View {
+        var body: some View {
+            Text("Loading...")
+        }
+    }
+    
 
     var body: some View {
         NavigationView {
@@ -51,6 +62,8 @@ struct ContentView: View {
                 }
                 
                 VStack {
+                    
+                    
                                             
                         if(currentFilter.inputKeys.contains(kCIInputIntensityKey)) {
                             HStack {

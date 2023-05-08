@@ -7,15 +7,43 @@
 
 import SwiftUI
 
-struct ContentView: View {
+enum LoadingState {
+    case loading, success, failed
+}
+
+struct LoadingView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        Text("Loading...")
+    }
+}
+
+struct SuccessView: View {
+    var body: some View {
+        Text("Success!")
+    }
+}
+
+struct FailedView: View {
+    var body: some View {
+        Text("Failed.")
+    }
+}
+
+struct ContentView: View {
+    
+    var loadingState = LoadingState.loading
+
+    
+    var body: some View {
+        
+        if loadingState == .loading {
+            LoadingView()
+        } else if loadingState == .success {
+            SuccessView()
+        } else if loadingState == .failed {
+            FailedView()
         }
-        .padding()
+
     }
 }
 

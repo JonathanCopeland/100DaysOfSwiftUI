@@ -50,13 +50,14 @@ struct ContentView: View {
                             viewModel.addLocation()
                         } label: {
                             Image(systemName: "plus")
+                                .padding()
+                                .background(.black.opacity(0.75))
+                                .foregroundColor(.white)
+                                .font(.title)
+                                .clipShape(Circle())
+                                .padding(.trailing)
                         }
-                        .padding()
-                        .background(.black.opacity(0.75))
-                        .foregroundColor(.white)
-                        .font(.title)
-                        .clipShape(Circle())
-                        .padding(.trailing)
+
                     }
                 }
             }else {
@@ -67,6 +68,11 @@ struct ContentView: View {
                 .background(.blue)
                 .foregroundColor(.white)
                 .clipShape(Capsule())
+                .alert("Authentication error", isPresented: $viewModel.isShowingAuthenticationError) {
+                    Button("OK") { }
+                } message: {
+                    Text(viewModel.authenticationError)
+                }
                 }
             }
             .sheet(item: $viewModel.selectedPlace) { place in
@@ -88,36 +94,3 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-
-
-//VStack {
-//    if isUnlocked {
-//        Text("Unlocked")
-//    } else {
-//        Text("Locked")
-//    }
-//}
-//.onAppear(perform: authenticate)
-
-
-//    func authenticate() {
-//        let context = LAContext()
-//        var error: NSError?
-//
-//        // check whether biometric authentication is possible
-//        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-//            // it's possible, so go ahead and use it
-//            let reason = "We need to unlock your data."
-//
-//            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
-//                // authentication has now completed
-//                if success {
-//                    isUnlocked = true
-//                } else {
-//                    // there was a problem
-//                }
-//            }
-//        } else {
-//            // no biometrics
-//        }
-//    }

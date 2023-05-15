@@ -22,7 +22,7 @@ struct ContentView: View {
                         VStack {
                             Image(systemName: "star.circle")
                                 .resizable()
-                                .foregroundColor(.red)
+                                .foregroundColor(.blue)
                                 .frame(width: 44, height: 44)
                                 .background(.white)
                                 .clipShape(Circle())
@@ -37,29 +37,80 @@ struct ContentView: View {
                     }
                     
                 }
+                // MARK: Building Sheet UI
+                // Since We Always Need Bottom Sheet At Bottom Setting to True By Default
+                    .bottomSheet(presentationDetents: [.medium,.large,.height(70)], isPresented: .constant(true), sheetCornerRadius: 20,isTransparentBG: true) {
+                        ScrollView(.vertical, showsIndicators: false) {
+ 
+                            VStack {
+                                Spacer()
+                                HStack {
+                                    Text("Locations")
+                                        .font(.title)
+                                        .fontWeight(.semibold)
+                                        .padding()
+                                    Spacer()
+                                    Button {
+                                        viewModel.addLocation()
+                                    } label: {
+                                        Image(systemName: "plus")
+                                            .padding()
+//                                            .background(.black.opacity(0.75))
+                                            .foregroundColor(.blue)
+                                            .font(.title)
+                                            .clipShape(Circle())
+                                            .padding(.trailing)
+                                    }
+
+                                }
+                            }
+                            
+                            
+                            VStack{
+                                ForEach(viewModel.locations) { location in
+                                    HStack {
+                                        VStack (alignment: .leading) {
+                                            Text(location.name)
+                                                .font(.headline)
+                                            Text(location.description)
+                                                .italic()
+                                        }
+                                        Spacer()
+                                        Text(location.name)
+                                    }
+                                    .padding(.bottom)
+
+
+                                }
+                            }
+                            .padding()
+                            .padding(.top)
+                            
+                            
+                        }
+                        .background(content: {
+                            Rectangle()
+                                .fill(.ultraThinMaterial)
+                                .ignoresSafeArea()
+                        })
+                        .sheet(item: $viewModel.selectedPlace) { place in
+                            EditView(location: place) { newLocation in
+                                viewModel.update(location: newLocation)
+                            }
+                            
+                        }
+
+                    } onDismiss: {}
                 .ignoresSafeArea()
+                
+                
                 Circle()
                     .fill(.blue)
                     .opacity(0.3)
                     .frame(width: 32, height: 32)
-                VStack {
-                    Spacer()
-                    HStack {
-                        Spacer()
-                        Button {
-                            viewModel.addLocation()
-                        } label: {
-                            Image(systemName: "plus")
-                                .padding()
-                                .background(.black.opacity(0.75))
-                                .foregroundColor(.white)
-                                .font(.title)
-                                .clipShape(Circle())
-                                .padding(.trailing)
-                        }
 
-                    }
-                }
+                
+                
             }else {
                 Button("Unlock Places") {
                     viewModel.authenticate()
@@ -75,12 +126,7 @@ struct ContentView: View {
                 }
                 }
             }
-            .sheet(item: $viewModel.selectedPlace) { place in
-                EditView(location: place) { newLocation in
-                    viewModel.update(location: newLocation)
-                }
-                
-            }
+
         
         
     }

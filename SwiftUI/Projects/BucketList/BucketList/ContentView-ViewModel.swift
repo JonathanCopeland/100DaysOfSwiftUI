@@ -14,7 +14,7 @@ extension ContentView {
         @Published var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 50, longitude: 0), span: MKCoordinateSpan(latitudeDelta: 25, longitudeDelta: 25))
         @Published private(set) var locations: [Location]
         @Published var selectedPlace: Location?
-        @Published var isUnlocked = false
+        @Published var isUnlocked = true
         
         @Published var authenticationError = "Unknown error"
         @Published var isShowingAuthenticationError = false

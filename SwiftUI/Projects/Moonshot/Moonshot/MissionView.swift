@@ -26,6 +26,7 @@ struct MissionView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(maxWidth: geometry.size.width * 0.6)
+                        .accessibilityHidden(true)
                     
 
                     

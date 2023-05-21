@@ -24,6 +24,7 @@ struct MissionsList: View {
                                 .scaledToFit()
                                 .frame(width: 40, height: 40)
                                 .padding()
+                                .accessibilityHidden(true)
 
                             VStack (alignment: .leading) {
                                 Text(mission.displayName)

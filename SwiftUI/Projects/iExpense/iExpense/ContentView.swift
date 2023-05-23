@@ -13,6 +13,8 @@ struct ContentView: View {
     
     @StateObject var expenses = Expenses()
     @State private var showingAddExpense = false
+    
+    var numver: Int 
 
     var body: some View {
         

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-
     @State private var output = ""
 
     var body: some View {
@@ -34,10 +33,7 @@ struct ContentView: View {
             case .failure(let error):
                 output = "Error: \(error.localizedDescription)"
         }
-
     }
-
-    
 }
 
 struct ContentView_Previews: PreviewProvider {

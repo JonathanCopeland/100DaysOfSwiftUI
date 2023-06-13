@@ -7,12 +7,24 @@
 
 import SwiftUI
 
-struct Prospect: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+class Prospect: Identifiable, Codable {
+    var id = UUID()
+    var name = "Anonymous"
+    var emailAddress = ""
+    fileprivate(set) var isContacted = false
 }
 
-#Preview {
-    Prospect()
+@MainActor class Prospects: ObservableObject {
+    @Published var people: [Prospect]
+
+    init() {
+        self.people = []
+    }
+    
+    func toggle(_ prospect: Prospect) {
+        objectWillChange.send()
+        prospect.isContacted.toggle()
+    }
+    
+    
 }

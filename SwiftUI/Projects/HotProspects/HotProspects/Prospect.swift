@@ -18,7 +18,14 @@ class Prospect: Identifiable, Codable {
     @Published var people: [Prospect]
 
     init() {
-        self.people = []
+        if let data = UserDefaults.standard.data(forKey: "SavedData") {
+            if let decoded = try? JSONDecoder().decode([Prospect].self, from: data) {
+                people = decoded
+                return
+            }
+        }
+
+        people = []
     }
     
     func toggle(_ prospect: Prospect) {

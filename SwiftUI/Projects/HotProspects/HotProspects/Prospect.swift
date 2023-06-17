@@ -15,10 +15,12 @@ class Prospect: Identifiable, Codable {
 }
 
 @MainActor class Prospects: ObservableObject {
-    @Published var people: [Prospect]
+    @Published private(set) var people: [Prospect]
+    let savePath = FileManager.documentsDirectory.appendingPathComponent("SavedData")
+
 
     init() {
-        if let data = UserDefaults.standard.data(forKey: "SavedData") {
+        if let data = try? Data(contentsOf: savePath) {
             if let decoded = try? JSONDecoder().decode([Prospect].self, from: data) {
                 people = decoded
                 return
@@ -28,9 +30,21 @@ class Prospect: Identifiable, Codable {
         people = []
     }
     
+    private func save() {
+        if let encoded = try? JSONEncoder().encode(people) {
+            try? encoded.write(to: savePath, options: [.atomic, .completeFileProtection])
+        }
+    }
+    
+    func add(_ prospect: Prospect) {
+        people.append(prospect)
+        save()
+    }
+    
     func toggle(_ prospect: Prospect) {
         objectWillChange.send()
         prospect.isContacted.toggle()
+        save()
     }
     
     

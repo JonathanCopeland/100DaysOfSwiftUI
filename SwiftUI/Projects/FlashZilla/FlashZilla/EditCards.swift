@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// TODO: Something is preventing text input in this app. I'll need to return and fix later. I suspect it is something to di with iOS 17 beta
+// TODO: Something is preventing text input in this app. I'll need to return and fix later. I suspect it is something to do with iOS 17 beta
 
 struct EditCards: View {
     @Environment(\.dismiss) var dismiss

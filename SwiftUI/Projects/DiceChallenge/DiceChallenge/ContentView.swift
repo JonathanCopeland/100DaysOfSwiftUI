@@ -19,20 +19,35 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            VStack (alignment: .center, spacing: 12) {
-                Text("\(result)")
-                    .font(.title)
-                Button {
-                    result = rollDice()
-                } label: {
-                    Text("Roll again!")
-                }
+            
+            List {
+                Text("Hello")
+                Text("Hello")
             }
+            
+            
+            
+//            VStack (alignment: .center, spacing: 12) {
+//                Text("\(result)")
+//                    .font(.title)
+//                Button {
+//                    result = rollDice()
+//                } label: {
+//                    Text("Roll dice!")
+//                }
+//            }
+            
+
             .toolbar {
                 Button {
                     showingPreviousResults.toggle()
                 } label: {
                     Image(systemName: "clock.arrow.circlepath")
+                }
+                Button {
+                    showingPreviousResults.toggle()
+                } label: {
+                    Image(systemName: "dice")
                 }
             }
             .sheet(isPresented: $showingPreviousResults) {
@@ -40,10 +55,6 @@ struct ContentView: View {
             }
         }
        
-        
-//        .sheet(isPresented: $showingAddHabit) {
-//            AddView(habits: habits)
-//        }
         
     }
 
@@ -63,7 +74,3 @@ struct ContentView: View {
     ContentView()
 }
 
-
-
-//let item = HabitItem(name: name, progress: progress, goal: goal)
-//habits.items.append(item)

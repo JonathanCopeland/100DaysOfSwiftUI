@@ -8,6 +8,7 @@
 import Foundation
 
 class PreviousResults: ObservableObject {
+
     @Published var items = [Result]() {
         didSet {
             if let encoded = try? JSONEncoder().encode(items) {

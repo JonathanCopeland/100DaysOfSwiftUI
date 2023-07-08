@@ -14,6 +14,7 @@
 		BD55761F2A52B2A900D304D5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD55761E2A52B2A900D304D5 /* Result.swift */; };
 		BD5576212A52B2CF00D304D5 /* PreviousResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5576202A52B2CF00D304D5 /* PreviousResultsView.swift */; };
 		BD5576232A52B5E300D304D5 /* PreviousResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5576222A52B5E300D304D5 /* PreviousResults.swift */; };
+		BD5576252A5A018F00D304D5 /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5576242A5A018F00D304D5 /* Dice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		BD55761E2A52B2A900D304D5 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		BD5576202A52B2CF00D304D5 /* PreviousResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousResultsView.swift; sourceTree = "<group>"; };
 		BD5576222A52B5E300D304D5 /* PreviousResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousResults.swift; sourceTree = "<group>"; };
+		BD5576242A5A018F00D304D5 /* Dice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				BD5576102A52AF3C00D304D5 /* ContentView.swift */,
 				BD5576202A52B2CF00D304D5 /* PreviousResultsView.swift */,
 				BD55761E2A52B2A900D304D5 /* Result.swift */,
+				BD5576242A5A018F00D304D5 /* Dice.swift */,
 				BD5576222A52B5E300D304D5 /* PreviousResults.swift */,
 				BD5576122A52AF4000D304D5 /* Assets.xcassets */,
 				BD5576142A52AF4000D304D5 /* Preview Content */,
@@ -150,6 +153,7 @@
 				BD5576232A52B5E300D304D5 /* PreviousResults.swift in Sources */,
 				BD55761F2A52B2A900D304D5 /* Result.swift in Sources */,
 				BD5576212A52B2CF00D304D5 /* PreviousResultsView.swift in Sources */,
+				BD5576252A5A018F00D304D5 /* Dice.swift in Sources */,
 				BD55760F2A52AF3C00D304D5 /* DiceChallengeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

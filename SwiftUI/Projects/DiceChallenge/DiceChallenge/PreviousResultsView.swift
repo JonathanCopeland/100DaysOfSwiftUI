@@ -9,15 +9,16 @@ import SwiftUI
 
 struct PreviousResultsView: View {
     
-    @ObservedObject var results: PreviousResults
+    @ObservedObject var history: History
 
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(results.items.reversed()) { item in
-                    Text("\(item.result)")
-                }
+                Text("value")
+//                ForEach(results.items.reversed()) { item in
+//                    Text("\(item.result)")
+//                }
             }
             .navigationTitle("Previous results")
             .toolbarTitleDisplayMode(.inline)
@@ -28,5 +29,5 @@ struct PreviousResultsView: View {
 }
 
 #Preview {
-    PreviousResultsView(results: PreviousResults())
+    PreviousResultsView(history: History())
 }

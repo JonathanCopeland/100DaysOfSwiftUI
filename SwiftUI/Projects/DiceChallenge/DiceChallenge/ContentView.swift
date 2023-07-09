@@ -9,34 +9,57 @@ import SwiftUI
 
 struct ContentView: View {
         
-    @StateObject var results = PreviousResults()
+//    @StateObject var results = PreviousResults()
     @State private var showingPreviousResults = false
 
+    @State private var testDie = Die.example1
+//    @State private var diceGroup = DiceGroup.example
+    
+    @StateObject var dice = DiceSet()
+    
+    var die1 = Die(sides: 4)
+    var die2 = Die(sides: 8)
 
-    
-    
-    @State private var result = 0
-    
+        
     var body: some View {
         NavigationStack {
             
-            List {
-                Text("Hello")
-                Text("Hello")
-            }
-            
-            
-            
-//            VStack (alignment: .center, spacing: 12) {
-//                Text("\(result)")
-//                    .font(.title)
-//                Button {
-//                    result = rollDice()
-//                } label: {
-//                    Text("Roll dice!")
+    
+//            VStack {
+//                ForEach(diceGroup.group) { dice in
+//                    VStack (alignment: .center, spacing: 12) {
+//                        Text("\(dice.rollResult())")
+//                            .font(.title)
+//                        Button {
+//                            dice.roll()
+//                        } label: {
+//                            Text("Roll dice!")
+//                        }
+//                    }
+//                    .padding()
 //                }
 //            }
             
+            VStack {
+                VStack (alignment: .center, spacing: 12) {
+                    Text("\(testDie.rollResult())")
+                        .font(.title)
+                    Button {
+                        testDie.roll()
+                    } label: {
+                        Text("Roll dice!")
+                    }
+                    Button {
+                        dice.diceSet.append(Die(sides: Int.random(in: 1...100)))
+                    } label: {
+                        Text("Add dice")
+                    }
+                }
+                .padding()
+                
+
+                
+            }
 
             .toolbar {
                 Button {
@@ -50,22 +73,14 @@ struct ContentView: View {
                     Image(systemName: "dice")
                 }
             }
-            .sheet(isPresented: $showingPreviousResults) {
-                PreviousResultsView(results: results)
-            }
+//            .sheet(isPresented: $showingPreviousResults) {
+//                PreviousResultsView(results: results)
+//            }
         }
        
         
     }
 
-    
-    
-    func rollDice() -> Int {
-        let num = Int.random(in: 1...6)
-        results.items.append(Result(result: num))
-        
-        return num
-    }
     
     
 }

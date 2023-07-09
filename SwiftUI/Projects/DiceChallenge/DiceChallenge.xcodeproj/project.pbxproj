@@ -11,10 +11,10 @@
 		BD5576112A52AF3C00D304D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5576102A52AF3C00D304D5 /* ContentView.swift */; };
 		BD5576132A52AF4000D304D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD5576122A52AF4000D304D5 /* Assets.xcassets */; };
 		BD5576162A52AF4000D304D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD5576152A52AF4000D304D5 /* Preview Assets.xcassets */; };
-		BD55761F2A52B2A900D304D5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD55761E2A52B2A900D304D5 /* Result.swift */; };
 		BD5576212A52B2CF00D304D5 /* PreviousResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5576202A52B2CF00D304D5 /* PreviousResultsView.swift */; };
-		BD5576232A52B5E300D304D5 /* PreviousResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5576222A52B5E300D304D5 /* PreviousResults.swift */; };
-		BD5576252A5A018F00D304D5 /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5576242A5A018F00D304D5 /* Dice.swift */; };
+		BD5576272A5B2AD200D304D5 /* DiceSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5576262A5B2AD200D304D5 /* DiceSet.swift */; };
+		BD5576292A5B2B1600D304D5 /* Die.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5576282A5B2B1600D304D5 /* Die.swift */; };
+		BD55762B2A5B2BE800D304D5 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD55762A2A5B2BE800D304D5 /* History.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,10 +23,10 @@
 		BD5576102A52AF3C00D304D5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BD5576122A52AF4000D304D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD5576152A52AF4000D304D5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		BD55761E2A52B2A900D304D5 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		BD5576202A52B2CF00D304D5 /* PreviousResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousResultsView.swift; sourceTree = "<group>"; };
-		BD5576222A52B5E300D304D5 /* PreviousResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousResults.swift; sourceTree = "<group>"; };
-		BD5576242A5A018F00D304D5 /* Dice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
+		BD5576262A5B2AD200D304D5 /* DiceSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceSet.swift; sourceTree = "<group>"; };
+		BD5576282A5B2B1600D304D5 /* Die.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Die.swift; sourceTree = "<group>"; };
+		BD55762A2A5B2BE800D304D5 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +62,9 @@
 				BD55760E2A52AF3C00D304D5 /* DiceChallengeApp.swift */,
 				BD5576102A52AF3C00D304D5 /* ContentView.swift */,
 				BD5576202A52B2CF00D304D5 /* PreviousResultsView.swift */,
-				BD55761E2A52B2A900D304D5 /* Result.swift */,
-				BD5576242A5A018F00D304D5 /* Dice.swift */,
-				BD5576222A52B5E300D304D5 /* PreviousResults.swift */,
+				BD5576262A5B2AD200D304D5 /* DiceSet.swift */,
+				BD5576282A5B2B1600D304D5 /* Die.swift */,
+				BD55762A2A5B2BE800D304D5 /* History.swift */,
 				BD5576122A52AF4000D304D5 /* Assets.xcassets */,
 				BD5576142A52AF4000D304D5 /* Preview Content */,
 			);
@@ -150,10 +150,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD5576112A52AF3C00D304D5 /* ContentView.swift in Sources */,
-				BD5576232A52B5E300D304D5 /* PreviousResults.swift in Sources */,
-				BD55761F2A52B2A900D304D5 /* Result.swift in Sources */,
+				BD5576272A5B2AD200D304D5 /* DiceSet.swift in Sources */,
+				BD55762B2A5B2BE800D304D5 /* History.swift in Sources */,
+				BD5576292A5B2B1600D304D5 /* Die.swift in Sources */,
 				BD5576212A52B2CF00D304D5 /* PreviousResultsView.swift in Sources */,
-				BD5576252A5A018F00D304D5 /* Dice.swift in Sources */,
 				BD55760F2A52AF3C00D304D5 /* DiceChallengeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

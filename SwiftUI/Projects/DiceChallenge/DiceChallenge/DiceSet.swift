@@ -10,4 +10,6 @@ import Foundation
 class DiceSet: ObservableObject {
     @Published var diceSet = [Die]()
     
+    static var example = [Die.example1, Die.example2]
+    
 }

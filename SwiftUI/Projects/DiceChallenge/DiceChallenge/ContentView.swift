@@ -16,22 +16,30 @@ struct ContentView: View {
 //    @State private var diceGroup = DiceGroup.example
     
     @StateObject var dice = DiceSet()
-    
+        
     var die1 = Die(sides: 4)
     var die2 = Die(sides: 8)
 
         
     var body: some View {
         NavigationStack {
+            Text("Hello")
+            
+//            for i in DiceSet.example {
+//                VStack {
+//                    Text("Hello")
+//                }
+//            }
             
     
 //            VStack {
-//                ForEach(diceGroup.group) { dice in
+//                ForEach(DiceSet.example) { dice in
 //                    VStack (alignment: .center, spacing: 12) {
 //                        Text("\(dice.rollResult())")
 //                            .font(.title)
 //                        Button {
-//                            dice.roll()
+////                            dice.roll()
+//                            
 //                        } label: {
 //                            Text("Roll dice!")
 //                        }
@@ -40,26 +48,13 @@ struct ContentView: View {
 //                }
 //            }
             
-            VStack {
-                VStack (alignment: .center, spacing: 12) {
-                    Text("\(testDie.rollResult())")
-                        .font(.title)
-                    Button {
-                        testDie.roll()
-                    } label: {
-                        Text("Roll dice!")
-                    }
-                    Button {
-                        dice.diceSet.append(Die(sides: Int.random(in: 1...100)))
-                    } label: {
-                        Text("Add dice")
-                    }
-                }
-                .padding()
-                
-
-                
+            Button {
+                dice.diceSet.append(Die(sides: Int.random(in: 1...100)))
+            } label: {
+                Text("Add dice")
             }
+            
+
 
             .toolbar {
                 Button {
@@ -77,9 +72,19 @@ struct ContentView: View {
 //                PreviousResultsView(results: results)
 //            }
         }
+        
+
        
         
     }
+    
+    func roll(dice: Die) -> some View {
+//        dice.roll()
+        Text("Hello2")
+    }
+    
+    
+
 
     
     
@@ -89,3 +94,25 @@ struct ContentView: View {
     ContentView()
 }
 
+
+
+
+//            VStack {
+//                VStack (alignment: .center, spacing: 12) {
+//                    Text("\(testDie.rollResult())")
+//                        .font(.title)
+//                    Text("\(dice.diceSet.count)")
+//
+//                    Button {
+//                        testDie.roll()
+//                    } label: {
+//                        Text("Roll dice!")
+//                    }
+//                    Button {
+//                        dice.diceSet.append(Die(sides: Int.random(in: 1...100)))
+//                    } label: {
+//                        Text("Add dice")
+//                    }
+//                }
+//                .padding()
+//            }

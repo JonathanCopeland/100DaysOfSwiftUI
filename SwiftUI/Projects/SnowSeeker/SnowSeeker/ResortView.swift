@@ -16,7 +16,7 @@ struct ResortView: View {
     @EnvironmentObject var favourites: Favorites
 
     @State private var selectedFacility: Facility?
-    @State private var showingFacility = false
+    @State private var showingFacility: Bool = false
     
     var body: some View {
         ScrollView {

@@ -15,6 +15,8 @@ struct WelcomeView: View {
             
             Text("Please select a resort from the left-hand menu; swipe from the left edge to show it.")
                 .foregroundColor(.secondary)
+            
+            
         }
     }
 }
